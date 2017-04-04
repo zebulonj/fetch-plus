@@ -30,8 +30,6 @@ fetch( '/', {
 }).then( ... );
 ```
 
-## References
-
 [fetch specification]: https://fetch.spec.whatwg.org
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
   "Cross-origin resource sharing"
