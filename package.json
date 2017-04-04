@@ -2,11 +2,11 @@
   "name": "fetch-plus",
   "description": "An enhanced fetch library, conforming to the window.fetch API, with sugar.",
   "version": "0.0.0-pre",
-  "main": "dist/fetch.js",
+  "main": "index.js",
   "repository": "zebulonj/fetch-plus",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir lib"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
