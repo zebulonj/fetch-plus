@@ -32,7 +32,7 @@
         "block-scoped-var": "off",
         "block-spacing": [
             "error",
-            "never"
+            "always"
         ],
         "brace-style": "off",
         "callback-return": "off",

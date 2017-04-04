@@ -1,16 +1,12 @@
-(function(self) {
-  'use strict';
-
-  if (self.fetch) {
-    return
-  }
-
+const {
+  fetch
+} = (function(self) {
   var support = {
     searchParams: 'URLSearchParams' in self,
     iterable: 'Symbol' in self && 'iterator' in Symbol,
     blob: 'FileReader' in self && 'Blob' in self && (function() {
       try {
-        new Blob()
+        new Blob()  // eslint-disable-line no-new
         return true
       } catch(e) {
         return false
@@ -46,7 +42,7 @@
     if (typeof name !== 'string') {
       name = String(name)
     }
-    if (/[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(name)) {
+    if (/[^a-z0-9\-#$%&'*+.^_`|~]/i.test(name)) {
       throw new TypeError('Invalid character in header field name')
     }
     return name.toLowerCase()
@@ -317,7 +313,7 @@
       }
       this.method = input.method
       this.mode = input.mode
-      if (!body && input._bodyInit != null) {
+      if (!body && input._bodyInit !== null) {
         body = input._bodyInit
         input.bodyUsed = true
       }
@@ -415,11 +411,7 @@
     return new Response(null, {status: status, headers: {location: url}})
   }
 
-  self.Headers = Headers
-  self.Request = Request
-  self.Response = Response
-
-  self.fetch = function(input, init) {
+  function fetch(input, init) {
     return new Promise(function(resolve, reject) {
       var request = new Request(input, init)
       var xhr = new XMLHttpRequest()
@@ -460,5 +452,10 @@
       xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit)
     })
   }
-  self.fetch.polyfill = true
-})(typeof self !== 'undefined' ? self : this);
+
+  return {
+    fetch
+  };
+})(typeof self !== 'undefined' ? self : this); // eslint-disable-line no-invalid-this
+
+export { fetch };
