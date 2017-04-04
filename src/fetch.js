@@ -1,6 +1,4 @@
-const {
-  fetch
-} = (function(self) {
+const lib = (function(self) {
   var support = {
     searchParams: 'URLSearchParams' in self,
     iterable: 'Symbol' in self && 'iterator' in Symbol,
@@ -435,6 +433,10 @@ const {
         reject(new TypeError('Network request failed'))
       }
 
+      if ( typeof init.xhr === 'function' ) {
+        xhr = init.xhr( xhr ) || xhr;
+      }
+
       xhr.open(request.method, request.url, true)
 
       if (request.credentials === 'include') {
@@ -457,5 +459,7 @@ const {
     fetch
   };
 })(typeof self !== 'undefined' ? self : this); // eslint-disable-line no-invalid-this
+
+const { fetch } = lib;
 
 export { fetch };

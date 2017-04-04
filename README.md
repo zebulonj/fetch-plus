@@ -4,6 +4,31 @@
 This module conforms to, and is a superset of, the API documented at:
 https://github.github.io/fetch/.
 
+## Sugar
+
+### Access to the XHR Object
+
+This module adds direct access to the XMLHttpRequest object, for use cases
+not supported by the `fetch` specification (for example, progress tracking).
+
+```
+fetch( '/', {
+  method: 'POST',
+  xhr: xhr => {
+    xhr.addEventListener( 'progress', event => {
+      if ( event.lengthComputable ) {
+        const percentComplete = event.loaded / event.total;
+      } else {
+        // Unable to compute progress information since the total size is unknown.
+      }
+    });
+  },
+  body: data
+}).then( ... );
+```
+
+## References
+
 [fetch specification]: https://fetch.spec.whatwg.org
 [cors]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
   "Cross-origin resource sharing"
