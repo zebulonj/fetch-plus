@@ -6,8 +6,7 @@
   "repository": "zebulonj/fetch-plus",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir lib",
-    "postinstall": "npm run build"
+    "build": "babel src --out-dir lib"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
