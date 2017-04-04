@@ -1,23 +1,22 @@
 {
-  "name": "whatwg-fetch",
-  "description": "A window.fetch polyfill.",
-  "version": "2.0.3",
-  "main": "fetch.js",
-  "repository": "github/fetch",
+  "name": "fetch-plus",
+  "description": "An enhanced fetch library, conforming to the window.fetch API, with sugar.",
+  "version": "0.0.0-pre",
+  "main": "dist/fetch.js",
+  "repository": "zebulonj/fetch-plus",
   "license": "MIT",
+  "scripts": {
+    "build": "babel src --out-dir dist"
+  },
   "devDependencies": {
-    "chai": "1.10.0",
-    "jshint": "2.8.0",
-    "mocha": "2.1.0",
-    "mocha-phantomjs-core": "2.0.1",
-    "promise-polyfill": "6.0.2",
-    "url-search-params": "0.6.1"
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.1",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-preset-es2015": "^6.24.0",
+    "eslint": "^3.19.0"
   },
   "files": [
-    "LICENSE",
-    "fetch.js"
-  ],
-  "scripts": {
-    "test": "make"
-  }
+    "LICENSE"
+  ]
 }
