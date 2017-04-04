@@ -1,4 +1,8 @@
 
+## Status: Experimental
+
+This is currently an **experimental** module. Future maintenance is not guaranteed. Register your interest by starring this project on GitHub.
+
 ## Usage
 
 This module conforms to, and is a superset of, the API documented at:
@@ -8,8 +12,7 @@ https://github.github.io/fetch/.
 
 ### Access to the XHR Object
 
-This module adds direct access to the XMLHttpRequest object, for use cases
-not supported by the `fetch` specification (for example, progress tracking).
+This module adds direct access to the XMLHttpRequest object, for use cases not supported by the `fetch` specification (for example, progress tracking).
 
 ```
 fetch( '/', {
