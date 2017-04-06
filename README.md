@@ -3,6 +3,11 @@
 
 This is currently an **experimental** module. Future maintenance is not guaranteed. Register your interest by starring this project on GitHub.
 
+During experimentation, this module can be installed using:
+```shell
+npm install --save https://github.com/zebulonj/fetch-plus/archive/next.tar.gz
+```
+
 ## Usage
 
 This module conforms to, and is a superset of, the API documented at:
