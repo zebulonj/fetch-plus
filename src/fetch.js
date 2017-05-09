@@ -463,3 +463,4 @@ const lib = (function(self) {
 const { fetch } = lib;
 
 export { fetch };
+export default fetch;
